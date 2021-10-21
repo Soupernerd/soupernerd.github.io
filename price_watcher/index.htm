@@ -1,92 +1,111 @@
 <html>
-    <head>
-        <title>Soups Test Kitchen</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        	<meta http-equiv="refresh" content="60" >
-		<script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-		<script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
-		<style>
-			body {
-			max-width: 1500px;
-			margin-left: auto;
-			margin-right: auto;
-			}
-			
-			.marquee {
-			padding: 5px;
-			}
-			
-			.columns {
-			width: 100%;
-			}
-			
-			.column-1, .column-2 {
-			width:100%;
-			}
-			
-			@media (min-width: 48em) {
-			.column-1 {
-			width: 70%;
-			height: 500px;
-			float:left;
-			}
-			
-			.column-2 {
-			width: 28%;
-			margin: 5px;
-			padding: 5px;
-			background-color: #decddd;
-			
-			float:right;
-			}
-			
-			.columns {
-			content:"";
-			display: table;
-			clear: both;
-			}
-			}
-			
-			.priceBox {
-			margin: 5px;
-			padding: 5px;
-			background-color: #decddd;
-			min-width: 31%;
-			float: left;
-			}
-			
-		</style>
-	</head>
-    <body>
-		
-		
-		
-		<div class="marquee"><coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,chainlink,sushi,metis-token,saito,star-atlas,star-atlas-dao,ecash,bone-shibaswap,avalanche-2" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget></div>
-		
-		
-		
-		
-		
-		
-		<div class="columns">
-			<div class="column column-1">
-     				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="bitcoin" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="ethereum" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="chainlink" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="sushi" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="metis-token" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="saito" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="star-atlas" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="star-atlas-dao" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="ecash" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="bone-shibaswap" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="avalanche-2" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-				<div class="priceBox" ><coingecko-coin-ticker-widget  coin-id="vesper-finance" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
-			</div>
-			<div class="column column-2">
-				<a class="twitter-timeline" data-lang="en" data-height="840" data-dnt="true" data-theme="light" href="https://twitter.com/JPeg_Getty/lists/1450426306206765058"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
-		</div>
-		
-	</body>
-</html>					
+<head>
+<title>Soups Test Kitchen</title>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="" />
+<script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+<script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
+
+
+<style>
+body {
+max-width: 1500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.marquee {
+padding: 5px;
+}
+
+.columns {
+width: 100%;
+}
+
+.column-1, .column-2 {
+width:100%;
+}
+
+@media (min-width: 48em) {
+.column-1 {
+width: 70%;
+height: 500px;
+float:left;
+}
+
+.column-2 {
+width: 28%;
+margin: 5px;
+padding: 5px;
+background-color: #decddd;
+
+float:right;
+}
+
+.columns {
+content:"";
+display: table;
+clear: both;
+}
+}
+
+.priceBox {
+margin: 5px;
+padding: 5px;
+background-color: #decddd;
+min-width: 31%;
+float: left;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="marquee"><coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,metis-token,saito,star-atlas,star-atlas-dao,ecash,bone-shibaswap,avalanche-2,vesper-finance" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget></div>
+
+
+
+<div class="columns">
+<div id="leftPrices" class="column column-1">
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="bitcoin" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="ethereum" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="metis-token" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="saito" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="star-atlas" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="star-atlas-dao" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="ecash" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="bone-shibaswap" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="avalanche-2" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+<div class="priceBox" ><coingecko-coin-ticker-widget coin-id="vesper-finance" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
+</div>
+<div id="" class="column column-2">
+<a class="twitter-timeline" data-lang="en" data-height="840" data-dnt="true" data-theme="light" href="https://twitter.com/JPeg_Getty/lists/1450426306206765058"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div>
+
+<script>
+	
+
+
+	
+// DOM listen
+document.addEventListener("DOMContentLoaded", function(){
+	
+
+// pull in divs
+var price_column = document.getElementById("leftPrices");
+console.log (price_column)
+
+function refreshDiv() {
+
+price_column.innerHTML = price_column.innerHTML;
+
+};
+window.setInterval(refreshDiv, 30000);
+});
+</script>
+
+</body>
+</html>
