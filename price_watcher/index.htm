@@ -2,10 +2,10 @@
 <head>
 <title>Soups Test Kitchen</title>  
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="" />
+<meta http-equiv="refresh" content="150000" />
 <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
 <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <style>
 body {
@@ -63,7 +63,7 @@ float: left;
 
 
 
-<div class="marquee"><coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,metis-token,saito,star-atlas,star-atlas-dao,ecash,bone-shibaswap,avalanche-2,vesper-finance" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget></div>
+<div id="upperMarquee" class="marquee"><coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,metis-token,saito,star-atlas,star-atlas-dao,ecash,bone-shibaswap,avalanche-2,vesper-finance" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget></div>
 
 
 
@@ -80,8 +80,10 @@ float: left;
 <div class="priceBox" ><coingecko-coin-ticker-widget coin-id="avalanche-2" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
 <div class="priceBox" ><coingecko-coin-ticker-widget coin-id="vesper-finance" currency="usd" locale="en"></coingecko-coin-ticker-widget></div>
 </div>
-<div id="" class="column column-2">
-<a class="twitter-timeline" data-lang="en" data-height="840" data-dnt="true" data-theme="light" href="https://twitter.com/JPeg_Getty/lists/1450426306206765058"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div id="twitterColumn" class="column column-2">
+
+<div><a class="twitter-timeline" data-lang="en" data-height="840" data-dnt="true" data-theme="light" href="https://twitter.com/JPeg_Getty/lists/1450426306206765058"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
 </div>
 </div>
 
@@ -92,18 +94,24 @@ float: left;
 	
 // DOM listen
 document.addEventListener("DOMContentLoaded", function(){
-	
+
 
 // pull in divs
+var marquee = document.getElementById("upperMarquee");
 var price_column = document.getElementById("leftPrices");
-console.log (price_column)
+
+function refreshMarquee() {
+marquee.innerHTML = marquee.innerHTML;
+};
 
 function refreshDiv() {
-
 price_column.innerHTML = price_column.innerHTML;
-
 };
+
+window.setInterval(refreshMarquee, 45000);
 window.setInterval(refreshDiv, 30000);
+
+
 });
 </script>
 
