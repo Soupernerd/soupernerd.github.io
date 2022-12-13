@@ -1,6 +1,7 @@
 * { box-sizing: border-box; }
 body {
   font: 16px Arial;
+		width: 100%;
 		margin: auto;
 		padding: 10px;
 }
@@ -95,24 +96,22 @@ input[type=submit] {
 margin-bottom: 10px;
 }
 
-.columns {
-}
-
 .column-1 {
 width: 70%;
 margin-bottom: 10px;
+float:left;
 }
 
 .column-2 {
 width: 30%;
 margin-bottom: 10px;
+float:right;
 }
 
 .tB_content {
 margin-top: 10px;
 /*padding: 3px;
 background-color: #decddd;*/
-float: right;
 }
 
 .inputsColumn-1 {
