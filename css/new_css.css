@@ -87,7 +87,7 @@ input[type=submit] {
 .priceBox button {
 	position: absolute;
 	top: 0px;
-	right: 0px;
+	right: 10px;
 }
 
 
@@ -104,11 +104,13 @@ margin-bottom: 10px;
 .column-1 {
 width: 70%;
 float:left;
+margin-bottom: 10px;
 }
 
 .column-2 {
 width: 30%;
 float:right;
+margin-bottom: 10px;
 }
 
 .tB_content {
