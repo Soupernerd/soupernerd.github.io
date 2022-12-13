@@ -86,9 +86,11 @@ input[type=submit] {
 
 .priceBox button {
 	position: absolute;
-	top: 0px;
-	right: 10px;
-	opacity: 0.3;
+	top: 6px;
+	right: 15px;
+opacity: 0.25;
+background-color: #FFF;
+border: 0;
 }
 
 
