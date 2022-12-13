@@ -86,8 +86,8 @@ input[type=submit] {
 
 .priceBox button {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 0px;
+	right: 0px;
 }
 
 
@@ -117,6 +117,10 @@ padding: 2px;
 background-color: #decddd;
 }
 
+.inputsColumns {
+margin-bottom: 10px;
+}
+
 .inputsColumn-1 {
 float: left;
 }
@@ -127,10 +131,6 @@ float: right;
 
 .tB_list_input {
 float: right;
-}
-
-.inputsColumns {
-margin-bottom: 10px;
 }
 
 .custom-select {
