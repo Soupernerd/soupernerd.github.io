@@ -93,6 +93,12 @@ background-color: #FFF;
 border: 0;
 }
 
+.priceBox:hover {
+	position: absolute;
+
+opacity: 1.0;
+
+}
 
 .marquee {
 /*padding: 5px;*/
