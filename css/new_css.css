@@ -93,7 +93,7 @@ background-color: #FFF;
 border: 0;
 }
 
-.priceBox:hover {
+.priceBox button hover {
 	position: absolute;
 
 opacity: 1.0;
