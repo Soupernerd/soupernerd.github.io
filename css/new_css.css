@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 body {
   font: 16px Arial;
-		width: 100%;
+		max-width: 1500px;
 		margin: auto;
 		padding: 10px;
 }
@@ -9,13 +9,12 @@ body {
   /*the container must be positioned relative:*/
   position: relative;
   display: inline-block;
-
 }
 input {
-  border: 1px solid #c2c2c2;
+  border: 1px solid transparent;
   background-color: #f1f1f1;
-  padding: 6px;
-  font-size: 15px;
+  padding: 10px;
+  font-size: 16px;
 }
 input[type=text] {
   background-color: #f1f1f1;
@@ -51,6 +50,7 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
 
 
 
@@ -96,10 +96,6 @@ input[type=submit] {
 margin-bottom: 10px;
 }
 
-.columns {
-width: 100%;
-float: left;
-}
 
 .column-1 {
 width: 70%;
@@ -115,16 +111,16 @@ float:right;
 
 .tB_content {
 margin-top: 10px;
-/*padding: 3px;
-background-color: #decddd;*/
+padding: 3px;
+background-color: #decddd;
 }
 
 .inputsColumn-1 {
-
+float: left;
 }
 
 .inputsColumn-2 {
-
+float: right;
 }
 
 .tB_list_input {
@@ -132,14 +128,6 @@ float: right;
 }
 
 .inputsColumns {
-}
-
-.float-left {
-float: left;	
-}
-
-.float-right {
-float: right;	
 }
 
 .custom-select {
