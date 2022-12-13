@@ -104,13 +104,11 @@ margin-bottom: 10px;
 .column-1 {
 width: 70%;
 float:left;
-margin-bottom: 10px;
 }
 
 .column-2 {
 width: 30%;
 float:right;
-margin-bottom: 10px;
 }
 
 .tB_content {
@@ -125,10 +123,12 @@ margin-bottom: 10px;
 
 .inputsColumn-1 {
 float: left;
+margin-bottom: 10px;
 }
 
 .inputsColumn-2 {
 float: right;
+margin-bottom: 10px;
 }
 
 .tB_list_input {
