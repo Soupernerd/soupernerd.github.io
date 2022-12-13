@@ -96,6 +96,9 @@ input[type=submit] {
 margin-bottom: 10px;
 }
 
+.columns {
+}
+
 .column-1 {
 width: 70%;
 margin-bottom: 10px;
@@ -115,6 +118,9 @@ background-color: #decddd;*/
 float: right;
 }
 
+.inputsColumns {
+}
+
 .inputsColumn-1 {
 
 }
@@ -127,8 +133,6 @@ float: right;
 float: right;
 }
 
-.inputsColumns {
-}
 
 .float-left {
 float: left;	
