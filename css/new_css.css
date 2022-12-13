@@ -11,9 +11,9 @@ body {
   display: inline-block;
 }
 input {
-  border: 1px solid #c2c2c2;
+  border: 1px solid transparent;
   background-color: #f1f1f1;
-  padding: 8px;
+  padding: 7px;
   font-size: 15px;
 }
 input[type=text] {
@@ -78,7 +78,7 @@ input[type=submit] {
 }
 
 	.pB_content {
-		margin-bottom: 10px;
+		margin-top: 10px;
 		margin-right: 10px;
 		padding: 3px;
 		background-color: #decddd;
@@ -86,62 +86,51 @@ input[type=submit] {
 
 .priceBox button {
 	position: absolute;
-	top: 6px;
+	top: 16px;
 	right: 15px;
 opacity: 0.25;
 background-color: #FFF;
 border: 0;
 }
 
-.priceBox button:hover {
-	position: absolute;
-
-opacity: 1.0;
-
-}
 
 .marquee {
 /*padding: 5px;*/
 margin-bottom: 10px;
 }
 
-.columns {
-float:left;
-margin-bottom: 10px;
-}
 
 .column-1 {
 width: 70%;
+margin-bottom: 10px;
 float:left;
 }
 
 .column-2 {
 width: 30%;
+margin-bottom: 10px;
 float:right;
 }
 
 .tB_content {
-margin-bottom: 10px;
+margin-top: 10px;
 padding: 2px;
 background-color: #decddd;
 }
 
-.inputsColumns {
-margin-bottom: 10px;
-}
-
 .inputsColumn-1 {
 float: left;
-margin-bottom: 10px;
 }
 
 .inputsColumn-2 {
 float: right;
-margin-bottom: 10px;
 }
 
 .tB_list_input {
 float: right;
+}
+
+.inputsColumns {
 }
 
 .custom-select {
