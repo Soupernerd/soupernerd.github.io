@@ -1,12 +1,9 @@
 * { box-sizing: border-box; }
 body {
   font: 16px Arial;
-		/*max-width: 1500px;*/
-		/*margin: auto;*/
+		max-width: 1500px;
+		margin: auto;
 		padding: 10px;
-   width: 100%;
-   margin-left: auto;
-   margin-right: auto;
 }
 .autocomplete {
   /*the container must be positioned relative:*/
@@ -99,9 +96,6 @@ input[type=submit] {
 margin-bottom: 10px;
 }
 
-.columns {
-}
-
 .column-1 {
 width: 70%;
 margin-bottom: 10px;
@@ -118,10 +112,6 @@ float:right;
 margin-top: 10px;
 /*padding: 3px;
 background-color: #decddd;*/
-float: right;
-}
-
-.inputsColumns {
 }
 
 .inputsColumn-1 {
@@ -136,6 +126,8 @@ float: right;
 float: right;
 }
 
+.inputsColumns {
+}
 
 .float-left {
 float: left;	
