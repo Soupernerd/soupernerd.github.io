@@ -154,18 +154,12 @@
 
 <script>
 var coinInterval = setInterval(function() {
-  var coinDiv = document.getElementById('container');
-  var marqueeDiv = document.getElementById('upperMarquee');
-  var coinContent = coinDiv.innerHTML;
-  var marqueeContent = marqueeDiv.innerHTML;
-  coinDiv.innerHTML = coinContent;
-  marqueeDiv.innerHTML = marqueeContent;
+createTickerWidgetDiv();
+setMarqueeWidget();
 }, 60000);
 
 var twitterInterval = setInterval(function() {
-  var twitterDiv = document.getElementById('twitterWidgetDiv');
-  var content = twitterDiv.innerHTML;
-  twitterDiv.innerHTML = content;
+setTwitterWidget();
 }, 145000);
 </script>
 
