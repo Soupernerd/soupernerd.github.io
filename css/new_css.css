@@ -119,6 +119,16 @@ width: 30%;
 float:right;
 }
 
+.contentRight img {
+  max-width: 100%;
+}
+
+.sponsor img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
 .twitterWidget {
 padding: 2px;
 background-color: #decddd;
