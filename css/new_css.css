@@ -103,6 +103,11 @@ opacity: 1.0;
 margin-bottom: 10px;
 }
 
+.columns {
+width: 100%;
+margin-bottom: 10px;
+float:left;
+}
 
 .column-1 {
 width: 70%;
@@ -135,6 +140,7 @@ float: right;
 }
 
 .inputsColumns {
+margin-bottom: 10px;
 }
 
 .custom-select {
