@@ -153,7 +153,7 @@
 </div>
 
 <script>
-setInterval(function() {
+var coinInterval = setInterval(function() {
   var coinDiv = document.getElementById('container');
   var marqueeDiv = document.getElementById('upperMarquee');
   var coinContent = coinDiv.innerHTML;
@@ -162,11 +162,11 @@ setInterval(function() {
   marqueeDiv.innerHTML = marqueeContent;
 }, 60000);
 
-setInterval(function() {
+var twitterInterval = setInterval(function() {
   var twitterDiv = document.getElementById('twitterWidgetDiv');
   var content = twitterDiv.innerHTML;
   twitterDiv.innerHTML = content;
-}, 150000);
+}, 145000);
 </script>
 
 
