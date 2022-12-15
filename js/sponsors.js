@@ -26,6 +26,10 @@ function getImageInfo() {
     });
 }
 
+
+
+
+// Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
   console.log("Displaying images on the page");
@@ -38,69 +42,57 @@ function displayImages() {
 
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
-    // Use the Math.random method to generate a random index between 0 and the length of the imageInfo array
-    var index = Math.floor(Math.random() * imageInfo.length);
-
-    // Use the index to select an image from the imageInfo array
-    var image = imageInfo[index];
-
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Create an img element
-    var img = document.createElement("img");
+    // Create an img element for each image
+    var images = imageInfo.map(function(info) {
+      var img = document.createElement("img");
 
-    // Set the src and href attributes of the img element to the src and href properties of the image info object
-    img.src = image.src;
-    img.href = image.href;
+      // Set the src attribute of the img element to the src property of the image info object
+      img.src = info.src;
 
-    // Create a link element for the image
-    var link = document.createElement("a");
-    link.href = image.href;
-    link.setAttribute("target", "_blank");
-    link.appendChild(img);
+      // Log the values of the src property and the src attribute
+      console.log("Image src property:", info.src);
+      console.log("Image src attribute:", img.src);
 
-    // Add the image to the page
-    imageElement.appendChild(link);
+      // Create a link element for each image
+      var link = document.createElement("a");
+      link.href = info.href;
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
+
+      return link;
+    });
+
+    // Add the images to the page
+    images.forEach(function(link) {
+      imageElement.appendChild(link);
+    });
   }
 }
 
 
-function cycleImages() {
-  // Log a message to the JavaScript console
-  console.log("Cycling through images");
 
-  // Get the image src and hrefs from local storage
+
+
+
+function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
-  // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
-    // Select the element where the images are displayed
-    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+	 var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Get the current src and href values of the img and a elements
-    var img = imageElement.querySelector("img");
-    var a = imageElement.querySelector("a");
-    var currentSrc = img.src;
-    var currentHref = a.href;
-
-    // Use the findIndex method to find the index of the current image in the imageInfo array
     var currentIndex = imageInfo.findIndex(function(info) {
-      return info.src === currentSrc && info.href === currentHref;
+      return info.src === imageElement.querySelector("img").src;
     });
 
-    // Calculate the index of the next image in the imageInfo array by adding 1 to the current index
-    // and using the % operator to ensure that the index is always between 0 and the length of the array
     var nextIndex = (currentIndex + 1) % imageInfo.length;
 
-    // Get the src and href values of the next image
-    var nextSrc = imageInfo[nextIndex].src;
-    var nextHref = imageInfo[nextIndex].href;
-
-    // Set the src and href attributes of the img and a elements to the corresponding values of the next image
-    img.setAttribute("src", nextSrc);
-    img.setAttribute("href", nextHref);
-    a.setAttribute("href", nextHref);
+	var imgElement = imageElement.querySelector("img");
+	var linkElement = imageElement.querySelector("a");
+	imgElement.src = imageInfo[nextIndex].src;
+	linkElement.href = imageInfo[nextIndex].href;
   }
 }
 
@@ -110,18 +102,10 @@ function cycleImages() {
 window.addEventListener("load", function() {
   // Use the Promise.all function to run the getImageInfo and displayImages functions in parallel
   Promise.all([getImageInfo(), displayImages()]).then(function() {
-    // Log a message to the JavaScript console when the images have finished cycling
-    console.log("Finished cycling through images");
+    // Log a message to the JavaScript console when both functions have completed
+    console.log("getImageInfo and displayImages functions have completed");
   });
 });
 
 // Every two minutes, cycle through the images
 setInterval(cycleImages, 2 * 60 * 1000);
-
-
-// Every two minutes, cycle through the images
-setInterval(cycleImages, 2 * 60 * 1000);
-
-
-
-////when this goes away its the last working code
