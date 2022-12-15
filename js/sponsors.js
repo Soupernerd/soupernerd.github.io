@@ -91,29 +91,26 @@ function displayImages() {
     // Remove the existing images from the page
     imageElement.innerHTML = "";
 
-    // Create a link element for each image
-    var links = imageInfo.map(function(info) {
-      // Create an img element
-      var img = document.createElement("img");
+    // Get the first image info object from the array
+    var info = imageInfo.shift();
 
-      // Set the src and href attributes of the img element to the corresponding values from the image info object
-      img.setAttribute("src", info.src);
-      img.setAttribute("href", info.href);
+    // Create an img element
+    var img = document.createElement("img");
 
-      // Create a link element
-      var link = document.createElement("a");
-      link.setAttribute("target", "_blank");
-      link.appendChild(img);
+    // Set the src and href attributes of the img element to the corresponding values from the image info object
+    img.setAttribute("src", info.src);
+    img.setAttribute("href", info.href);
 
-      return link;
-    });
+    // Create a link element
+    var link = document.createElement("a");
+    link.setAttribute("target", "_blank");
+    link.appendChild(img);
 
-    // Add the images to the page
-    links.forEach(function(link) {
-      imageElement.appendChild(link);
-    });
+    // Add the image to the page
+    imageElement.appendChild(link);
   }
 }
+
 
 
 
