@@ -30,36 +30,43 @@ function getImageInfo() {
 function displayImages() {
   // Log a message to the JavaScript console
   console.log("Displaying images on the page");
+  
+  // Get the image src and hrefs from local storage
+  return getImageInfo().then(function(imageInfo) {
 
   // Get the image src and hrefs from local storage
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
-  // Make sure we have some images to display
-  if (imageInfo && imageInfo.length > 0) {
+
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Remove the existing images from the page
-    imageElement.innerHTML = "";
+    // Create an img element for each image
+    var images = imageInfo.map(function(info) {
+      var img = document.createElement("img");
 
-    // Get the first image info object from the array
-    var info = imageInfo.shift();
+      // Set the src attribute of the img element to the src property of the image info object
+      img.src = info.src;
 
-    // Create an img element
-    var img = document.createElement("img");
+      // Log the values of the src property and the src attribute
+      console.log("Image src property:", info.src);
+      console.log("Image src attribute:", img.src);
 
-    // Set the src and href attributes of the img element to the corresponding values from the image info object
-    img.setAttribute("src", info.src);
-    img.setAttribute("href", info.href);
+      // Create a link element for each image
+      var link = document.createElement("a");
+      link.href = info.href;
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
 
-    // Create a link element
-    var link = document.createElement("a");
-    link.setAttribute("target", "_blank");
-    link.appendChild(img);
+      return link;
+    });
 
-    // Add the image to the page
-    imageElement.appendChild(link);
-  }
+    // Add the images to the page
+    images.forEach(function(link) {
+      imageElement.appendChild(link);
+	
+
+  });
 }
 
 function cycleImages() {
@@ -82,14 +89,9 @@ function cycleImages() {
 }
 
 
-// When the page loads, get the image src and hrefs and store them in local storage,
-// and then display the images on the page
+// When the page loads, get the image names and URLs and store them in local storage
 window.addEventListener("load", function() {
-  // Use the Promise.all function to run the getImageInfo and displayImages functions in parallel
-  Promise.all([getImageInfo(), displayImages()]).then(function() {
-    // Log a message to the JavaScript console when both functions have completed
-    console.log("getImageInfo and displayImages functions have completed");
-  });
+  displayImages()
 });
 
 // Every two minutes, cycle through the images
