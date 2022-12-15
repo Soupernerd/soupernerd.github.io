@@ -104,5 +104,7 @@ function cycleImages() {
 // When the page loads, get the image names and URLs and store them in local storage
 window.addEventListener("load", function() {
   displayImages();
+  cycleImages();
   setInterval(cycleImages, 2 * 60 * 1000);
 });
+
