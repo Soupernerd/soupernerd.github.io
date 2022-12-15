@@ -64,8 +64,8 @@ function displayImages() {
     // Add the images to the page
     images.forEach(function(link) {
       imageElement.appendChild(link);
+	});
 	
-
   });
 }
 
