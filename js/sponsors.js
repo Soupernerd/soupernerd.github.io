@@ -61,6 +61,7 @@ function displayImages() {
   });
 }
 
+
 function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
@@ -89,4 +90,4 @@ window.addEventListener("load", function() {
 });
 
 // Every two minutes, cycle through the images
-setInterval(cycleImages, 1 * 60 * 1000);
+setInterval(cycleImages, 2 * 60 * 1000);
