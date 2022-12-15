@@ -36,7 +36,7 @@ function displayImages() {
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
     // Select the element where the images will be displayed
-    var imageElement = document.querySelector("#sponsor");
+    var imageElement = document.querySelector(".sponsor");
 
     // Create an img element for each image
     var images = imageInfo.map(function(info) {
@@ -69,7 +69,8 @@ function cycleImages() {
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
     // Select the element where the images are displayed
-    var imageElement = document.querySelector("#sponsor");
+	var imageElement = document.querySelector(".sponsor");
+
 
     // Get the index of the currently-displayed image
     var currentIndex = imageInfo.findIndex(function(info) {
