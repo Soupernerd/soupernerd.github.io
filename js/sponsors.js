@@ -38,19 +38,20 @@ function displayImages() {
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Create an img element for each image
-    var images = imageInfo.map(function(info) {
-      var img = document.createElement("img");
-      img.src = info.name;
+// Create an img element for each image
+var images = imageInfo.map(function(info) {
+  var img = document.createElement("img");
+  img.src = info.src; // Use the "src" property to set the image source
 
-      // Create a link element for each image
-      var link = document.createElement("a");
-      link.href = info.url;
-      link.setAttribute("target", "_blank");
-      link.appendChild(img);
+  // Create a link element for each image
+  var link = document.createElement("a");
+  link.href = info.href; // Use the "href" property to set the link URL
+  link.setAttribute("target", "_blank");
+  link.appendChild(img);
 
-      return link;
-    });
+  return link;
+});
+
 
     // Add the images to the page
     images.forEach(function(link) {
@@ -70,7 +71,7 @@ function cycleImages() {
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
     // Select the element where the images are displayed
-	var imageElement = document.querySelector(".sponsor");
+	 var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
 
     // Get the index of the currently-displayed image
@@ -81,11 +82,12 @@ function cycleImages() {
     // Calculate the index of the next image to display
     var nextIndex = (currentIndex + 1) % imageInfo.length;
 
-    // Update the src and href attributes of the img and a elements to display the next image
-    var imgElement = imageElement.querySelector("img");
-    var linkElement = imageElement.querySelector("a");
-    imgElement.src = imageInfo[nextIndex].name;
-    linkElement.href = imageInfo[nextIndex].url;
+	// Update the src and href attributes of the img and a elements to display the next image
+	var imgElement = imageElement.querySelector("img");
+	var linkElement = imageElement.querySelector("a");
+	imgElement.src = imageInfo[nextIndex].src;
+	linkElement.href = imageInfo[nextIndex].href;
+
   }
 }
 
