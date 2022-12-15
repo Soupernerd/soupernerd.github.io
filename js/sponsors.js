@@ -62,6 +62,7 @@ function displayImages() {
     // Add the first image to the page
     images.forEach(function(link) {
       imageElement.appendChild(link);
+	  cycleImages();
     });
   });
 }
@@ -110,6 +111,9 @@ function cycleImages() {
 // When the page loads, get the image names and URLs and store them in local storage
 window.addEventListener("load", function() {
   displayImages();
-  cycleImages();
-  setInterval(cycleImages, 2 * 60 * 1000);
 });
+
+// Every two minutes, cycle through the images
+setInterval(cycleImages, 2 * 60 * 1000);
+
+
