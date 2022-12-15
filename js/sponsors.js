@@ -26,7 +26,6 @@ function getImageInfo() {
     });
 }
 
-// Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
   console.log("Displaying images on the page");
@@ -61,6 +60,7 @@ function displayImages() {
     imageElement.appendChild(link);
   }
 }
+
 
 function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
