@@ -165,4 +165,4 @@ window.addEventListener("load", function() {
 });
 
 // Every two minutes, cycle through the images
-setInterval(cycleImages, 2 * 60 * 1000);
+/*setInterval(cycleImages, 2 * 60 * 1000);*/
