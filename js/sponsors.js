@@ -38,20 +38,19 @@ function displayImages() {
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-// Create an img element for each image
-var images = imageInfo.map(function(info) {
-  var img = document.createElement("img");
-  img.src = info.src; // Use the "src" property to set the image source
+    // Create an img element for each image
+    var images = imageInfo.map(function(info) {
+      var img = document.createElement("img");
+      img.src = info.name;
 
-  // Create a link element for each image
-  var link = document.createElement("a");
-  link.href = info.href; // Use the "href" property to set the link URL
-  link.setAttribute("target", "_blank");
-  link.appendChild(img);
+      // Create a link element for each image
+      var link = document.createElement("a");
+      link.href = info.url;
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
 
-  return link;
-});
-
+      return link;
+    });
 
     // Add the images to the page
     images.forEach(function(link) {
@@ -59,6 +58,7 @@ var images = imageInfo.map(function(info) {
     });
   }
 }
+
 
 
 
