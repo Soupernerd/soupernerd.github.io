@@ -30,19 +30,17 @@ function getImageInfo() {
 function displayImages() {
   // Log a message to the JavaScript console
   console.log("Displaying images on the page");
-  
+
   // Get the image src and hrefs from local storage
   return getImageInfo().then(function(imageInfo) {
-
-  // Get the image src and hrefs from local storage
-  var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
-
+    // Create a new array with only the first value from the original array
+    var firstImage = imageInfo.slice(0, 1);
 
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Create an img element for each image
-    var images = imageInfo.map(function(info) {
+    // Create an img element for the first image
+    var images = firstImage.map(function(info) {
       var img = document.createElement("img");
 
       // Set the src attribute of the img element to the src property of the image info object
@@ -52,7 +50,7 @@ function displayImages() {
       console.log("Image src property:", info.src);
       console.log("Image src attribute:", img.src);
 
-      // Create a link element for each image
+      // Create a link element for the first image
       var link = document.createElement("a");
       link.href = info.href;
       link.setAttribute("target", "_blank");
@@ -61,13 +59,13 @@ function displayImages() {
       return link;
     });
 
-    // Add the images to the page
+    // Add the first image to the page
     images.forEach(function(link) {
       imageElement.appendChild(link);
-	});
-	
+    });
   });
 }
+
 
 function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
