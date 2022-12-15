@@ -28,7 +28,7 @@ function getImageInfo() {
 
 
 
-/*
+
 // Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
@@ -71,10 +71,10 @@ function displayImages() {
     });
   }
 }
-*/
 
 
 
+/*
 // Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
@@ -110,7 +110,7 @@ function displayImages() {
     imageElement.appendChild(link);
   }
 }
-
+*/
 
 
 
