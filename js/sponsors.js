@@ -31,38 +31,31 @@ function displayImages() {
   console.log("Displaying images on the page");
 
   // Get the image src and hrefs from local storage
-  var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
+  return getImageInfo().then(function(imageInfo) {
+    // Select the element where the images will be displayed
+    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // If there are no images, fetch the image information and store it in local storage
-    return getImageInfo().then(function() {
-      // Once the image information has been stored in local storage, get it again
-      // and display the images on the page
-      imageInfo = JSON.parse(localStorage.getItem("sponsors"));
+    // Remove the existing images from the page
+    imageElement.innerHTML = "";
 
-      // Select the element where the images will be displayed
-      var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+    // Get the first image info object from the array
+    var info = imageInfo.shift();
 
-      // Remove the existing images from the page
-      imageElement.innerHTML = "";
+    // Create an img element
+    var img = document.createElement("img");
 
-      // Get the first image info object from the array
-      var info = imageInfo.shift();
+    // Set the src and href attributes of the img element to the corresponding values from the image info object
+    img.setAttribute("src", info.src);
+    img.setAttribute("href", info.href);
 
-      // Create an img element
-      var img = document.createElement("img");
+    // Create a link element
+    var link = document.createElement("a");
+    link.setAttribute("target", "_blank");
+    link.appendChild(img);
 
-      // Set the src and href attributes of the img element to the corresponding values from the image info object
-      img.setAttribute("src", info.src);
-      img.setAttribute("href", info.href);
-
-      // Create a link element
-      var link = document.createElement("a");
-      link.setAttribute("target", "_blank");
-      link.appendChild(img);
-
-      // Add the image to the page
-      imageElement.appendChild(link);
-    });
+    // Add the image to the page
+    imageElement.appendChild(link);
+  });
 }
 
 
