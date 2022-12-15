@@ -34,31 +34,35 @@ function displayImages() {
   // Get the image src and hrefs from local storage
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
+  // Log the value of imageInfo
+  console.log("Image info:", imageInfo);
+
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    // Remove the existing images from the page
-    imageElement.innerHTML = "";
+    // Create an img element for each image
+    var images = imageInfo.map(function(info) {
+      var img = document.createElement("img");
 
-    // Get the first image info object from the array
-    var info = imageInfo.shift();
+      // Set the src and href attributes of the img element to the src and href properties of the image info object
+      img.src = info.src;
+      img.href = info.href;
 
-    // Create an img element
-    var img = document.createElement("img");
+      // Create a link element for each image
+      var link = document.createElement("a");
+      link.href = info.href;
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
 
-    // Set the src and href attributes of the img element to the corresponding values from the image info object
-    img.setAttribute("src", info.src);
-    img.setAttribute("href", info.href);
+      return link;
+    });
 
-    // Create a link element
-    var link = document.createElement("a");
-    link.setAttribute("target", "_blank");
-    link.appendChild(img);
-
-    // Add the image to the page
-    imageElement.appendChild(link);
+    // Add the images to the page
+    images.forEach(function(link) {
+      imageElement.appendChild(link);
+    });
   }
 }
 
