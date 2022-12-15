@@ -44,12 +44,13 @@ function displayImages() {
     // Create an img element
     var img = document.createElement("img");
 
-    // Set the src and href attributes of the img element to the corresponding values from the image info object
-    img.setAttribute("src", info.src);
-    img.setAttribute("href", info.href);
+    // Set the src and href attributes of the img element to the src and href properties of the image info object
+    img.src = image.src;
+    img.href = image.href;
 
     // Create a link element
     var link = document.createElement("a");
+    link.href = image.href;
     link.setAttribute("target", "_blank");
 
     // Add the img element to the link element
