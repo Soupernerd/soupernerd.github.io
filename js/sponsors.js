@@ -101,7 +101,9 @@ window.addEventListener("load", function() {
 });
 
 // When the page loads, display the images on the page
-window.addEventListener("load", displayImages);
+window.addEventListener("load", () => {
+	displayImages();
+});
 
 // Every two minutes, cycle through the images
 setInterval(cycleImages, 2 * 60 * 1000);
