@@ -42,7 +42,11 @@ function displayImages() {
     // Create an img element for each image
     var images = imageInfo.map(function(info) {
       var img = document.createElement("img");
+
+      // Set the src attribute of the img element to the src property of the image info object
       img.src = info.src;
+      console.log("Image src property:", info.src);
+      console.log("Image src attribute:", img.src);
 
       // Create a link element for each image
       var link = document.createElement("a");
@@ -59,6 +63,7 @@ function displayImages() {
     });
   }
 }
+
 
 
 
