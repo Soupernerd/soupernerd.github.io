@@ -31,12 +31,14 @@ function getImageInfo() {
 
 // Next, we define a function that displays the images on the page
 function displayImages() {
+  // Log a message to the JavaScript console
+  console.log("Displaying images on the page");
+
   // Get the image src and hrefs from local storage
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
-  
-    // Log a message to the JavaScript console
-  console.log("Displaying images on the page");
-  console.log(imageInfo);
+
+  // Log the value of imageInfo
+  console.log("Image info:", imageInfo);
 
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
