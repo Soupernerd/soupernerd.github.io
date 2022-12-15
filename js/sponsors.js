@@ -49,12 +49,9 @@ function displayImages() {
     var images = imageInfo.map(function(info) {
       var img = document.createElement("img");
 
-      // Set the src attribute of the img element to the src property of the image info object
+      // Set the src and href attributes of the img element to the src and href properties of the image info object
       img.src = info.src;
-
-      // Log the values of the src property and the src attribute
-      console.log("Image src property:", info.src);
-      console.log("Image src attribute:", img.src);
+      img.href = info.href;
 
       // Create a link element for each image
       var link = document.createElement("a");
@@ -71,6 +68,7 @@ function displayImages() {
     });
   }
 }
+
 
 
 
@@ -118,23 +116,42 @@ function displayImages() {
 
 
 function cycleImages() {
+  // Log a message to the JavaScript console
+  console.log("Cycling through images");
+
+  // Get the image src and hrefs from local storage
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
+  // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
-	 var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+    // Select the element where the images are displayed
+    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
+    // Get the current src and href values of the img and a elements
+    var img = imageElement.querySelector("img");
+    var a = imageElement.querySelector("a");
+    var currentSrc = img.src;
+    var currentHref = a.href;
+
+    // Find the index of the current image in the image info array
     var currentIndex = imageInfo.findIndex(function(info) {
-      return info.src === imageElement.querySelector("img").src;
+      return info.src === currentSrc && info.href === currentHref;
     });
 
+    // Calculate the index of the next image in the image info array
     var nextIndex = (currentIndex + 1) % imageInfo.length;
 
-	var imgElement = imageElement.querySelector("img");
-	var linkElement = imageElement.querySelector("a");
-	imgElement.src = imageInfo[nextIndex].src;
-	linkElement.href = imageInfo[nextIndex].href;
+    // Get the src and href values of the next image
+    var nextSrc = imageInfo[nextIndex].src;
+    var nextHref = imageInfo[nextIndex].href;
+
+    // Set the src and href attributes of the img and a elements to the corresponding values of the next image
+    img.setAttribute("src", nextSrc);
+    img.setAttribute("href", nextHref);
+    a.setAttribute("href", nextHref);
   }
 }
+
 
 
 // When the page loads, get the image src and hrefs and store them in local storage,
