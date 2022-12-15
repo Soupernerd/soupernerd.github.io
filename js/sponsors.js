@@ -101,6 +101,7 @@ function cycleImages() {
 
       // Add the next image to the page
       linkElement.appendChild(img);
+console.log("Cycling images:", linkElement);
     }
   }
 }
