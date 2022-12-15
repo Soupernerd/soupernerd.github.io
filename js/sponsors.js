@@ -4,8 +4,9 @@ function getImageInfo() {
       return response.json();
     })
     .then(function(data) {
-      var keySponsors = data.keySponsors;
-      var entries = Object.entries(keySponsors);
+      // Instead of accessing the nonexistent "keySponsors" property,
+      // access the array of objects directly
+      var entries = Object.entries(data);
 
       var imageInfo = entries.map(function(entry) {
         var key = entry[0];
@@ -24,6 +25,7 @@ function getImageInfo() {
       console.error(error);
     });
 }
+
 
 
 
