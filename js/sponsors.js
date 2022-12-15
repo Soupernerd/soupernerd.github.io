@@ -75,29 +75,32 @@ function cycleImages() {
 
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
-    var currentIndex = imageInfo.findIndex(function(info) {
-      return info.src === imageElement.querySelector("img").src;
-    });
+    // Check if the imageElement is not null
+    if (imageElement) {
+      var currentIndex = imageInfo.findIndex(function(info) {
+        return info.src === imageElement.querySelector("img").src;
+      });
 
-    var nextIndex = (currentIndex + 1) % imageInfo.length;
+      var nextIndex = (currentIndex + 1) % imageInfo.length;
 
-    // Create an img element for the next image
-    var img = document.createElement("img");
-    img.src = imageInfo[nextIndex].src;
+      // Create an img element for the next image
+      var img = document.createElement("img");
+      img.src = imageInfo[nextIndex].src;
 
-    // Create a link element for the next image
-    var link = document.createElement("a");
-    link.href = imageInfo[nextIndex].href;
-    link.setAttribute("target", "_blank");
-    link.appendChild(img);
+      // Create a link element for the next image
+      var link = document.createElement("a");
+      link.href = imageInfo[nextIndex].href;
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
 
-    // Remove the current image from the page
-    var imgElement = imageElement.querySelector("img");
-    var linkElement = imageElement.querySelector("a");
-    linkElement.removeChild(imgElement);
+      // Remove the current image from the page
+      var imgElement = imageElement.querySelector("img");
+      var linkElement = imageElement.querySelector("a");
+      linkElement.removeChild(imgElement);
 
-    // Add the next image to the page
-    linkElement.appendChild(img);
+      // Add the next image to the page
+      linkElement.appendChild(img);
+    }
   }
 }
 
@@ -110,4 +113,3 @@ window.addEventListener("load", function() {
   cycleImages();
   setInterval(cycleImages, 2 * 60 * 1000);
 });
-
