@@ -28,7 +28,7 @@ function getImageInfo() {
 
 
 
-
+/*
 // Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
@@ -67,6 +67,49 @@ function displayImages() {
 
     // Add the images to the page
     images.forEach(function(link) {
+      imageElement.appendChild(link);
+    });
+  }
+}
+*/
+
+
+
+// Next, we define a function that displays the images on the page
+function displayImages() {
+  // Log a message to the JavaScript console
+  console.log("Displaying images on the page");
+
+  // Get the image src and hrefs from local storage
+  var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
+
+  // Make sure we have some images to display
+  if (imageInfo && imageInfo.length > 0) {
+    // Select the element where the images will be displayed
+    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+
+    // Remove the existing images from the page
+    imageElement.innerHTML = "";
+
+    // Create a link element for each image
+    var links = imageInfo.map(function(info) {
+      // Create an img element
+      var img = document.createElement("img");
+
+      // Set the src and href attributes of the img element to the corresponding values from the image info object
+      img.setAttribute("src", info.src);
+      img.setAttribute("href", info.href);
+
+      // Create a link element
+      var link = document.createElement("a");
+      link.setAttribute("target", "_blank");
+      link.appendChild(img);
+
+      return link;
+    });
+
+    // Add the images to the page
+    links.forEach(function(link) {
       imageElement.appendChild(link);
     });
   }
