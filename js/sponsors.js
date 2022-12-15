@@ -26,9 +26,6 @@ function getImageInfo() {
     });
 }
 
-
-
-
 // Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
@@ -69,52 +66,6 @@ function displayImages() {
   }
 }
 
-
-
-
-/*
-// Next, we define a function that displays the images on the page
-function displayImages() {
-  // Log a message to the JavaScript console
-  console.log("Displaying images on the page");
-
-  // Get the image src and hrefs from local storage
-  var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
-
-  // Make sure we have some images to display
-  if (imageInfo && imageInfo.length > 0) {
-    // Select the element where the images will be displayed
-    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
-
-    // Remove the existing images from the page
-    imageElement.innerHTML = "";
-
-    // Get the first image info object from the array
-    var info = imageInfo.shift();
-
-    // Create an img element
-    var img = document.createElement("img");
-
-    // Set the src and href attributes of the img element to the corresponding values from the image info object
-    img.setAttribute("src", info.src);
-    img.setAttribute("href", info.href);
-
-    // Create a link element
-    var link = document.createElement("a");
-    link.setAttribute("target", "_blank");
-    link.appendChild(img);
-
-    // Add the image to the page
-    imageElement.appendChild(link);
-  }
-}
-*/
-
-
-
-
-
-
 function cycleImages() {
   // Log a message to the JavaScript console
   console.log("Cycling through images");
@@ -152,17 +103,14 @@ function cycleImages() {
   }
 }
 
-
-
-// When the page loads, get the image src and hrefs and store them in local storage,
-// and then display the images on the page
+// When the page loads, get the image src and hrefs and store them in local storage
 window.addEventListener("load", function() {
-  // Use the Promise.all function to run the getImageInfo and displayImages functions in parallel
-  Promise.all([getImageInfo(), displayImages()]).then(function() {
-    // Log a message to the JavaScript console when both functions have completed
-    console.log("getImageInfo and displayImages functions have completed");
-  });
+  // Call the getImageInfo function here, and store the returned value in local storage
+  localStorage.setItem("sponsors", JSON.stringify(getImageInfo()));
+
+  // Call the displayImages function here, to make sure it is not called until getImageInfo is finished
+  displayImages();
 });
 
 // Every two minutes, cycle through the images
-/*setInterval(cycleImages, 2 * 60 * 1000);*/
+setInterval(cycleImages, 2 * 60 * 1000);
