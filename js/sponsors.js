@@ -36,7 +36,7 @@ function displayImages() {
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
     // Select the element where the images will be displayed
-    var imageElement = document.querySelector(".sponsor");
+    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
     // Create an img element for each image
     var images = imageInfo.map(function(info) {
@@ -46,7 +46,7 @@ function displayImages() {
       // Create a link element for each image
       var link = document.createElement("a");
       link.href = info.url;
-	  link.setAttribute("target", "_blank");
+      link.setAttribute("target", "_blank");
       link.appendChild(img);
 
       return link;
@@ -58,6 +58,7 @@ function displayImages() {
     });
   }
 }
+
 
 
 // Finally, we define a function that cycles through the images
