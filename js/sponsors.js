@@ -97,14 +97,14 @@ function cycleImages() {
 }
 
 
-// When the page loads, get the image src and hrefs and store them in local storage
+// When the page loads, get the image src and hrefs and store them in local storage,
+// and then display the images on the page
 window.addEventListener("load", function() {
-  localStorage.setItem("sponsors", JSON.stringify(getImageInfo()));
-});
-
-// When the page loads, display the images on the page
-window.addEventListener("load", () => {
-	displayImages();
+  // Use the Promise.all function to run the getImageInfo and displayImages functions in parallel
+  Promise.all([getImageInfo(), displayImages()]).then(function() {
+    // Log a message to the JavaScript console when both functions have completed
+    console.log("getImageInfo and displayImages functions have completed");
+  });
 });
 
 // Every two minutes, cycle through the images
