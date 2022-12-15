@@ -1,6 +1,6 @@
 function getImageInfo() {
   // Use the fetch() function to get the JSON data from the URL
-  return fetch("http://example.com/json/sponsors.json")
+  return fetch("json/sponsors.json")
     .then(function(response) {
       // The fetch was successful, so we can extract the JSON data from the response
       return response.json();
