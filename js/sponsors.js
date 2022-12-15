@@ -51,6 +51,8 @@ function displayImages() {
     // Create a link element
     var link = document.createElement("a");
     link.setAttribute("target", "_blank");
+
+    // Add the img element to the link element
     link.appendChild(img);
 
     // Add the image to the page
@@ -86,4 +88,4 @@ window.addEventListener("load", function() {
 });
 
 // Every two minutes, cycle through the images
-setInterval(cycleImages, 2 * 60 * 1000);
+setInterval(cycleImages, 1 * 60 * 1000);
