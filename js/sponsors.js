@@ -71,7 +71,7 @@ function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
   if (imageInfo && imageInfo.length > 0) {
-	 var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+    var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
     var currentIndex = imageInfo.findIndex(function(info) {
       return info.src === imageElement.querySelector("img").src;
@@ -79,12 +79,26 @@ function cycleImages() {
 
     var nextIndex = (currentIndex + 1) % imageInfo.length;
 
-	var imgElement = imageElement.querySelector("img");
-	var linkElement = imageElement.querySelector("a");
-	imgElement.src = imageInfo[nextIndex].src;
-	linkElement.href = imageInfo[nextIndex].href;
+    // Create an img element for the next image
+    var img = document.createElement("img");
+    img.src = imageInfo[nextIndex].src;
+
+    // Create a link element for the next image
+    var link = document.createElement("a");
+    link.href = imageInfo[nextIndex].href;
+    link.setAttribute("target", "_blank");
+    link.appendChild(img);
+
+    // Remove the current image from the page
+    var imgElement = imageElement.querySelector("img");
+    var linkElement = imageElement.querySelector("a");
+    linkElement.removeChild(imgElement);
+
+    // Add the next image to the page
+    linkElement.appendChild(img);
   }
 }
+
 
 
 // When the page loads, get the image names and URLs and store them in local storage
