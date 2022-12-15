@@ -62,7 +62,7 @@ function displayImages() {
     // Add the first image to the page
     images.forEach(function(link) {
       imageElement.appendChild(link);
-	  cycleImages();
+	  /*cycleImages();*/
     });
   });
 }
