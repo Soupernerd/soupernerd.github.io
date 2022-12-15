@@ -71,6 +71,8 @@ function cycleImages() {
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
   if (imageInfo && imageInfo.length > 0) {
+    console.log("Cycling images:", imageInfo);
+
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
 
     var currentIndex = imageInfo.findIndex(function(info) {
@@ -98,6 +100,7 @@ function cycleImages() {
     linkElement.appendChild(img);
   }
 }
+
 
 
 
