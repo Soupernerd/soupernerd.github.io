@@ -26,6 +26,7 @@ function getImageInfo() {
     });
 }
 
+// Next, we define a function that displays the images on the page
 function displayImages() {
   // Log a message to the JavaScript console
   console.log("Displaying images on the page");
@@ -33,30 +34,26 @@ function displayImages() {
   // Get the image src and hrefs from local storage
   var imageInfo = JSON.parse(localStorage.getItem("sponsors"));
 
-  // Log the value of imageInfo
-  console.log("Image info:", imageInfo);
-
   // Make sure we have some images to display
   if (imageInfo && imageInfo.length > 0) {
-    // Use the Math.random method to generate a random index between 0 and the length of the imageInfo array
-    var index = Math.floor(Math.random() * imageInfo.length);
-
-    // Use the index to select an image from the imageInfo array
-    var image = imageInfo[index];
-
     // Select the element where the images will be displayed
     var imageElement = document.getElementById("sponsorAboveTwitterWidget");
+
+    // Remove the existing images from the page
+    imageElement.innerHTML = "";
+
+    // Get the first image info object from the array
+    var info = imageInfo.shift();
 
     // Create an img element
     var img = document.createElement("img");
 
-    // Set the src and href attributes of the img element to the src and href properties of the image info object
-    img.src = image.src;
-    img.href = image.href;
+    // Set the src and href attributes of the img element to the corresponding values from the image info object
+    img.setAttribute("src", info.src);
+    img.setAttribute("href", info.href);
 
-    // Create a link element for the image
+    // Create a link element
     var link = document.createElement("a");
-    link.href = image.href;
     link.setAttribute("target", "_blank");
     link.appendChild(img);
 
