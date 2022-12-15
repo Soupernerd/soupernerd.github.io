@@ -1,10 +1,10 @@
 [
     {
-        "name":  "images/sponsors/sideshift.png",
-        "url":  "http://sideshift.finance"
+        "src":  "images/sponsors/sideshift.png",
+        "href":  "http://sideshift.finance"
     },
     {
-        "name":  "images/sponsors/ecash.png",
-        "url":  "https://e.cash"
+        "src":  "images/sponsors/ecash.png",
+        "href":  "https://e.cash"
     }
 ]
