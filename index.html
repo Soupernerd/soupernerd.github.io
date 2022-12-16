@@ -19,8 +19,6 @@
 
 <body>
 
-<div id="toast"></div>
-
 
 <div id="upperMarquee" class="marquee"></div>
 
@@ -28,9 +26,10 @@
 
 <div class="content">
 
-	<!-- Coin Widget Input Div, Coin Widget Div -->
+	<!-- Coin Widget Input Div, Error Div, Coin Widget Div -->
 	<div class="contentLeft">
-
+	
+		<!-- Coin Widget Input Div -->
 		<div class="coinInputDiv">
 
 			<div class="autocomplete" style="width:215px;">
@@ -124,6 +123,9 @@
 			</select>
 
 		</div>
+		
+		<!-- Error Div -->
+		<div id="toast" class="toast"></div>
 
 		<!-- Coin Widget Div -->
 		<div id="container"></div>
@@ -140,6 +142,7 @@
 		<input id="twitterListInput" type="text" placeholder="Your Custom Twitter Widget URL">
 		</div>
 		<input type="submit" id="twitterSubmitButton"; style="margin-left: 5px;">
+		<a href="./media/add_custom_twitter_widget.mp4" target="_blank" style="margin-left: 5px; text-decoration:none">?</a>
 		</div>
 	
 		<!-- Sponsor Div -->
@@ -157,6 +160,7 @@
 
 </div>
 
+<!-- Update Widgets -->
 <script>
 var coinInterval = setInterval(function() {
   loadTickerWidgets();
@@ -168,6 +172,18 @@ var twitterInterval = setInterval(function() {
   console.clear();
   console.log();
 }, 186000);
+
+      // Display a temp message
+      const tempToastMessage = document.getElementById("toast");
+      toast.textContent = "If no widgets appear, coingecko is blocking your VPN. Try switching locations. Temp message while we create error checking.";
+      toast.style.display = "block";
+
+      // Remove the toast notification after x seconds
+      setTimeout(() => {
+        toast.textContent = "";
+        toast.style.display = "none";
+      }, 10000);
+
 </script>
 
 </body>
