@@ -58,7 +58,9 @@ input[type=submit] {
 
 
 
-#container {}
+.container {
+	
+}
 
 	.priceBox {
 	min-width: 50%;
