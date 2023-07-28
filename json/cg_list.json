@@ -1020,6 +1020,10 @@
         "name":  "Metis"
     },
     {
+        "id":  "worldcoin-wld",
+        "name":  "Worldcoin"
+    },   
+    {
         "id":  "kyber-network-crystal",
         "name":  "Kyber Network Crystal"
     },
@@ -6693,7 +6697,7 @@
     },
     {
         "id":  "goztepe-s-k-fan-token",
-        "name":  "Göztepe S.K. Fan Token"
+        "name":  "GÃ¶ztepe S.K. Fan Token"
     },
     {
         "id":  "flourishing-ai-token",
@@ -9193,7 +9197,7 @@
     },
     {
         "id":  "clube-atletico-mineiro-fan-token",
-        "name":  "Clube Atlético Mineiro Fan Token"
+        "name":  "Clube AtlÃ©tico Mineiro Fan Token"
     },
     {
         "id":  "bsc-station",
@@ -10669,7 +10673,7 @@
     },
     {
         "id":  "turkiye-basketbol-federasyonu-token",
-        "name":  "Türkiye Basketbol Federasyonu Fan Token"
+        "name":  "TÃ¼rkiye Basketbol Federasyonu Fan Token"
     },
     {
         "id":  "stone-token",
@@ -11777,7 +11781,7 @@
     },
     {
         "id":  "turkiye-motosiklet-federasyonu-fan-token",
-        "name":  "Türkiye Motosiklet Federasyonu Fan Token"
+        "name":  "TÃ¼rkiye Motosiklet Federasyonu Fan Token"
     },
     {
         "id":  "ardana",
@@ -12569,7 +12573,7 @@
     },
     {
         "id":  "ankaragucu-fan-token",
-        "name":  "Ankaragücü Fan Token"
+        "name":  "AnkaragÃ¼cÃ¼ Fan Token"
     },
     {
         "id":  "portion",
@@ -14353,7 +14357,7 @@
     },
     {
         "id":  "moonai",
-        "name":  "Moonaï"
+        "name":  "MoonaÃ¯"
     },
     {
         "id":  "furio",
@@ -17445,7 +17449,7 @@
     },
     {
         "id":  "genclerbirligi-fan-token",
-        "name":  "Gençlerbirligi Fan Token"
+        "name":  "GenÃ§lerbirligi Fan Token"
     },
     {
         "id":  "bitcoinvb",
@@ -21301,7 +21305,7 @@
     },
     {
         "id":  "defi-04ab07ad-43a9-4d63-a379-2c6a2499f748",
-        "name":  "DeFi²"
+        "name":  "DeFiÂ²"
     },
     {
         "id":  "defi11",
@@ -22397,7 +22401,7 @@
     },
     {
         "id":  "footballfanapp",
-        "name":  "FanCoin®"
+        "name":  "FanCoinÂ®"
     },
     {
         "id":  "frog-ceo",
@@ -23621,7 +23625,7 @@
     },
     {
         "id":  "stade-francais-paris-fan-token",
-        "name":  "Stade Français Paris Fan Token"
+        "name":  "Stade FranÃ§ais Paris Fan Token"
     },
     {
         "id":  "asic-token",
@@ -33469,7 +33473,7 @@
     },
     {
         "id":  "equilibre",
-        "name":  "Équilibre"
+        "name":  "Ã‰quilibre"
     },
     {
         "id":  "equilibrium",
@@ -37045,7 +37049,7 @@
     },
     {
         "id":  "the-people-coin",
-        "name":  "The People’s Coin"
+        "name":  "The PeopleÂ’s Coin"
     },
     {
         "id":  "the-phoenix",
@@ -38201,7 +38205,7 @@
     },
     {
         "id":  "defi-04ab07ad-43a9-4d63-a379-2c6a2499f748",
-        "name":  "DeFi²"
+        "name":  "DeFiÂ²"
     },
     {
         "id":  "defi11",
@@ -38877,7 +38881,7 @@
     },
     {
         "id":  "equilibre",
-        "name":  "Équilibre"
+        "name":  "Ã‰quilibre"
     },
     {
         "id":  "equilibrium",
