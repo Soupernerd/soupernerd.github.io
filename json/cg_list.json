@@ -1097,7 +1097,11 @@
     },
     {
         "id":  "lukso-token",
-        "name":  "LUKSO [OLD]"
+        "name":  "LUKSO [OLD ERC-20]"
+    },
+    {
+        "id":  "lukso-token-2",
+        "name":  "LUKSO [Migrated]"
     },
     {
         "id":  "vvs-finance",
